@@ -1,3 +1,4 @@
+import javafx.css.Size;
 import javafx.scene.shape.*;
 public class Controller {
     //getting numbers and mesh froms tetris class
@@ -66,5 +67,58 @@ public class Controller {
             d.setY(SIZE);
             name = "j";
         }
+        if(block <30){
+            a.setX(XMAX/2 + SIZE);
+            b.setX(XMAX/2 - SIZE);
+            b.setY(SIZE);
+            c.setX(XMAX/2);
+            c.setY(SIZE);
+            d.setX(XMAX/2 + SIZE);
+            d.setY(SIZE);
+            name = "l";
+        }
+        if(block <45){
+            a.setX(XMAX/2 - SIZE);
+            b.setX(XMAX/2);
+            b.setX(XMAX/2 - SIZE);
+            c.setY(SIZE);
+            d.setX(XMAX / 2);
+            d.setY(SIZE);
+            name = "o";
+        }
+        if(block <60){
+            a.setX(XMAX/2 + SIZE);
+            b.setX(XMAX/2);
+            b.setX(XMAX/2);
+            c.setY(SIZE);
+            d.setX(XMAX/2 - SIZE);
+            d.setY(SIZE);
+            name = "s";
+        }
+        if(block <75){
+            a.setX(XMAX/2 - SIZE);
+            b.setX(XMAX/2);
+            b.setX(XMAX/2);
+            c.setY(SIZE);
+            d.setX(XMAX / 2 + SIZE);
+            name = "t";
+        }
+        if(block < 90){
+            a.setX(XMAX/2 + SIZE);
+            b.setX(XMAX / 2);
+            b.setX(XMAX/2 + SIZE);
+            c.setY(SIZE);
+            d.setX(XMAX/2 + SIZE + SIZE);
+            d.setY(SIZE);
+            name = "z";
+        }
+        else{
+            a.setX(XMAX/2 - SIZE -SIZE);
+            b.setX(XMAX/2 -SIZE);
+            b.setX(XMAX / 2);
+            d.setX((XMAX/2 + SIZE));
+            name = "i";
+        }
+        return new Form(a,b,c,d,name);
     }
 }

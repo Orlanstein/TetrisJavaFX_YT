@@ -17,7 +17,7 @@ public class Tetris extends Application {
     public static int score = 0;
 
     private static boolean game = true;
-    private static Form nextObj = controller.makeRect();
+    private static Form nextObj = Controller.makeRect();
     private static int linesNo = 0;
 
     @Override
