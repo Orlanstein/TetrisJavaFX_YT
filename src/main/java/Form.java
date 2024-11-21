@@ -23,37 +23,39 @@ public class Form {
         this.c = c;
         this.d = d;
         this.name = name;
+
+        //set color of the stones
+        switch (name) {
+            case "j":
+                color = Color.SLATEGRAY;
+                break;
+            case "l":
+                color = Color.DARKGOLDENROD;
+                break;
+            case "o":
+                color = Color.INDIANRED;
+                break;
+            case "s":
+                color = Color.FORESTGREEN;
+                break;
+            case "t":
+                color = Color.CADETBLUE;
+                break;
+            case "z":
+                color = Color.HOTPINK;
+                break;
+            case "i":
+                color = Color.SANDYBROWN;
+                break;
+        }
+
+        this.a.setFill(color);
+        this.b.setFill(color);
+        this.c.setFill(color);
+        this.d.setFill(color);
     }
 
-    //set color of the stones
-    switch (name) {
-        case "j":
-            color = Color.SLATEGRAY;
-            break;
-        case "l":
-            color = Color.DARKGOLDENROD;
-            break;
-        case "o":
-            color = Color.INDIANRED;
-            break;
-        case "s":
-            color = Color.FORESTGREEN;
-            break;
-        case "t":
-            color = Color.CADETBLUE;
-            break;
-        case "z":
-            color = Color.HOTPINK;
-            break;
-        case "i":
-            color = Color.SANDYBROWN;
-            break;
-    }
 
-    this.a.setFill(color);
-    this.b.setFill(color);
-    this.c.setFill(color);
-    this.d.setFill(color);
 
     public String getName(){
         return name;

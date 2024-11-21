@@ -6,6 +6,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -125,10 +126,38 @@ public class Tetris extends Application {
                     case LEFT:
                         Controller.MoveLeft(form); break;
                     case UP:
-                        MoveTurn(form);
+                        moveTurn(form);
                         break;
                 }
             }
         });
+    }
+    private void moveTurn(Form form){
+        int f = form.form;
+        Rectangle a = form.a;
+        Rectangle b = form.b;
+        Rectangle c = form.c;
+        Rectangle d = form.d;
+
+        switch (form.getName()){
+            case "j":
+                if(f == 1 && cB(a,1,-1) && cB(c,-1,1) && cB(d, -2,-2)){
+                    MoveRight(form.a);
+                }
+        }
+    }
+    private boolean cB(Rectangle rect, int x, int y){
+        boolean yb = false;
+        boolean xb = false;
+        if(x >= 0)
+            xb = rect.getX() + x*MOVE <= XMAX - SIZE;
+        if(x < 0)
+            xb = rect.getX() + x*MOVE >= 0;
+        if(y >= 0)
+            yb = rect.getY() + y*MOVE >0;
+        if(y<0)
+            yb = rect.getY() + y*MOVE < YMAX;
+
+        return xb && yb && MESH[((int) rect.getX()/SIZE + x)][((int)rect.getY()/SIZE)-y] == 0;
     }
 }
